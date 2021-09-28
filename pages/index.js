@@ -29,7 +29,7 @@ export default function Home({ items }) {
           gridGap={6}
         >
           {items.map((item, i) => (
-            <Card maxW="2xs" mx="auto">
+            <Card maxW="2xs" mx="auto" key={i}>
               <Image
                 borderRadius={7}
                 width="232"
