@@ -1,14 +1,33 @@
 import React from 'react'
+import Link from 'next/link'
 import { gql } from '@apollo/client'
+import { useUser } from '@auth0/nextjs-auth0'
 import client from '../../apolloClient'
 
 function ItemPage({ item }) {
+  const { user } = useUser()
   return (
-    <div>
-      <h1>{item.itemName}</h1>
-      {/* <img src={item.itemImage[0].url} alt={`${item.itemName} Cover Image`} /> */}
-      <div dangerouslySetInnerHTML={{ __html: item.itemDescription.html }} />
-    </div>
+    <>
+      {user ? (
+        <div>
+          <h1>{item.itemName}</h1>
+          <img
+            src={item.itemImage[0].url}
+            alt={`${item.itemName} Cover Image`}
+          />
+          <div
+            dangerouslySetInnerHTML={{ __html: item.itemDescription.html }}
+          />
+          <button>
+            <Link href="/api/auth/logout">Logout</Link>
+          </button>
+        </div>
+      ) : (
+        <button>
+          <Link href="/api/auth/login">Login</Link>
+        </button>
+      )}
+    </>
   )
 }
 
