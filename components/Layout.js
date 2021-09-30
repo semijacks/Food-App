@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { Container } from '@chakra-ui/react'
+import { Container, Box } from '@chakra-ui/react'
 import NavBar from './NavBar'
 import Footer from './Footer'
 
@@ -10,13 +10,18 @@ function Layout({ children }) {
       <Head>
         <title>Top Foods</title>
       </Head>
-      <main>
+      <Box>
         <NavBar />
-        <Container maxW="container.3xl" py={4}>
+        <Container
+          maxW={['container.sm', 'container.md', '95%']}
+          minH="90vh"
+          py={4}
+          px={0}
+        >
           {children}
         </Container>
         <Footer />
-      </main>
+      </Box>
     </>
   )
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box, Text } from '@chakra-ui/react'
 
-function Footer() {
+function profile() {
   return (
     <Box>
-      <Text>Hello from Footer</Text>
+      <Text>Hello from Profile</Text>
     </Box>
   )
 }
 
-export default Footer
+export default profile

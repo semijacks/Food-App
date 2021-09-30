@@ -15,6 +15,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  Heading,
 } from '@chakra-ui/react'
 import { FaShoppingCart } from 'react-icons/fa'
 import { Card } from '../components/Card'
@@ -25,22 +26,23 @@ export default function Home({ items }) {
     <>
       {user ? (
         <Grid
+          w={['100%', '100%', '100%']}
+          mx="auto"
           gridTemplateColumns="repeat(auto-fit, minmax(var(--chakra-sizes-3xs), 1fr))"
           gridGap={6}
         >
           {items.map((item, i) => (
-            <Card maxW="2xs" mx="auto" key={i}>
+            <Card maxW="250px" mx="auto" key={i}>
               <Image
+                w="232px"
+                h="232px"
                 borderRadius={7}
-                width="232"
-                height="232"
                 src={item.itemImage[0].url}
                 alt={`${item.itemName} Cover Image`}
-                overflow="hidden"
               />
-              <Text color="black.500" fontSize="lg" fontWeight="bold" mt={5}>
+              <Heading size="md" color="black.500" mt={5}>
                 {`NGN ${item.price}`}
-              </Text>
+              </Heading>
               <Text
                 color="black.500"
                 fontSize="md"

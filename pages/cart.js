@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box, Text } from '@chakra-ui/react'
 
-function Footer() {
+function Cart() {
   return (
     <Box>
-      <Text>Hello from Footer</Text>
+      <Text>Hello from cart</Text>
     </Box>
   )
 }
 
-export default Footer
+export default Cart
